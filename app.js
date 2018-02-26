@@ -14,6 +14,16 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended: true}));
 
+// ================================
+//              SCHEMA
+// ================================
+var blogScheme = new mongoose.Schema({
+    title: String,
+    image: String,
+    body: String,
+    created: {type: Date, default: Date.now}
+});
+
 app.get('/', (req, res) => {
     res.send("Hello");
 });
