@@ -24,9 +24,26 @@ var blogScheme = new mongoose.Schema({
     created: {type: Date, default: Date.now}
 });
 
+var Blog = mongoose.model("Blog", blogScheme);
+
+// ================================
+//              RESTFUL ROUTES
+// ================================
+
 app.get('/', (req, res) => {
-    res.send("Hello");
+    res.redirect("blogs");
 });
+
+app.get('/blogs', (req, res) => {
+    Blog.find({}, function(err, retrievedBlogs) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("index", {blogs: retrievedBlogs});
+        }
+    })
+});
+
 
 app.listen(3000, () => {
     console.log('RESTful BlogApp successfully started...');
