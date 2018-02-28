@@ -1,3 +1,7 @@
 <h1>This is the index page.</h1>
 
-<h1><%= blogs %></h1>
+<% blogs.forEach(function(blog) { %>
+    <h3><%= blog.title %></h3>
+    <h3><%= blog.body %></h3>
+    <span><%= blog.created %></span>
+<% }); %>
