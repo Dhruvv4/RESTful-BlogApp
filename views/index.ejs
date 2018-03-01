@@ -1,3 +1,5 @@
+<% include ./partials/header %>
+
 <h1>This is the index page.</h1>
 
 <% blogs.forEach(function(blog) { %>
@@ -5,3 +7,5 @@
     <h3><%= blog.body %></h3>
     <span><%= blog.created %></span>
 <% }); %>
+
+<% include ./partials/footer %>
