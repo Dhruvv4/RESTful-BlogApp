@@ -34,6 +34,7 @@ app.get('/', (req, res) => {
     res.redirect("blogs");
 });
 
+// Index route
 app.get('/blogs', (req, res) => {
     Blog.find({}, function(err, retrievedBlogs) {
         if (err) {
