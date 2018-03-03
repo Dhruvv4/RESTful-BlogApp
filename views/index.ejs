@@ -5,6 +5,7 @@
 <% blogs.forEach(function(blog) { %>
     <h3><%= blog.title %></h3>
     <h3><%= blog.body %></h3>
+    <img src="<%= blog.image %>" alt=""><br>
     <span><%= blog.created %></span>
 <% }); %>
 
