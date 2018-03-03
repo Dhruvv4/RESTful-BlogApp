@@ -1,12 +1,14 @@
 <% include ./partials/header %>
 
-<h1>This is the index page.</h1>
+<div class="container main">
+    <h1>This is the index page.</h1>
 
-<% blogs.forEach(function(blog) { %>
-    <h3><%= blog.title %></h3>
-    <h3><%= blog.body %></h3>
-    <img src="<%= blog.image %>" alt=""><br>
-    <span><%= blog.created %></span>
-<% }); %>
+    <% blogs.forEach(function(blog) { %>
+        <h3><%= blog.title %></h3>
+        <h3><%= blog.body %></h3>
+        <img src="<%= blog.image %>" alt=""><br>
+        <span><%= blog.created %></span>
+    <% }); %>
+</div>
 
 <% include ./partials/footer %>
