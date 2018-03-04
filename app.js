@@ -27,14 +27,14 @@ var blogScheme = new mongoose.Schema({
 var Blog = mongoose.model("Blog", blogScheme);
 
 // ================================
-//              RESTFUL ROUTES
+//          RESTFUL ROUTES
 // ================================
 
 app.get('/', (req, res) => {
     res.redirect("blogs");
 });
 
-// INDEX ROUTE
+// ========= INDEX ROUTE ==========
 app.get('/blogs', (req, res) => {
     Blog.find({}, function(err, retrievedBlogs) {
         if (err) {
@@ -45,12 +45,12 @@ app.get('/blogs', (req, res) => {
     })
 });
 
-// NEW ROUTE
+// ========= NEW ROUTE ===========
 app.get('/blogs/new', (req, res) => {
     res.render("new");
 });
 
-// CREATE ROUTE
+// ========= CREATE ROUTE ==========
 app.post('/blogs', (req, res) => {
     // Create blog
     Blog.create(req.body.blog, (err, newBlog) => {
