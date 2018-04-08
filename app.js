@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
     res.redirect("blogs");
 });
 
-// Index route
+// INDEX ROUTE
 app.get('/blogs', (req, res) => {
     Blog.find({}, function(err, retrievedBlogs) {
         if (err) {
@@ -45,6 +45,10 @@ app.get('/blogs', (req, res) => {
     })
 });
 
+// NEW ROUTE
+app.get('/blogs/new', (req, res) => {
+    res.render("new");
+});
 
 app.listen(3000, () => {
     console.log('RESTful BlogApp successfully started...');
